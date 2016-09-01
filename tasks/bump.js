@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     var dryRun = grunt.option('dry-run') || opts.dryRun;
 
     var setVersion = grunt.option('setversion') || opts.setVersion;
-    if (setVersion && !semver.valid(setVersion)) {
+    if (setVersion && semver.valid(setVersion) === null) {
       setVersion = false;
     }
 
